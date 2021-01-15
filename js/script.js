@@ -1,26 +1,27 @@
-//var visible = false;
-if(screen.width >= 700){
-        document.getElementById("menu").style.display = "flex";
-    }
+var visible = false;
+
 iniciar();
-function iniciar(){
-    
-    var elemento = document.getElementById("botonNav");
-    elemento.addEventListener("click", mostrarMenu);
+
+function iniciar() {
+    var elemento = document.getElementById("menu");
+
+    document.getElementById("botonNav").addEventListener("click", function () {
+        if (!visible) {
+            elemento.style.display = "flex";
+            visible = true;
+        }
+        else {
+            elemento.style.display = "none";
+            visible = false;
+        }
+    });
 }
 
-function mostrarMenu(){
-    var elemento = document.getElementById("menu");
-    if(elemento.style.display == "none"){
-        elemento.style.display="flex";
-        //visible=true;
+window.addEventListener("resize", function () {
+    if (window.innerWidth > 700) {
+        document.getElementById("menu").style.display = "flex";
     }
-    /*else if(elemento.style.display == "none" && document.getElementById("botonNav").style.display == "none"){
-        elemento.style.display="flex";
-        //visible=false;
-    }*/
-    else {
-        elemento.style.display="none";
+    else{
+        document.getElementById("menu").style.display = "none";
     }
-    
-}
+});
