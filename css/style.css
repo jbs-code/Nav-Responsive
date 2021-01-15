@@ -1,0 +1,74 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Yusei Magic', sans-serif;
+    letter-spacing: 2px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgba(92, 11, 117, 1);
+    color: #fff;
+}
+
+#botonNav{
+    display: none;
+    cursor: pointer;
+}
+
+.fas{
+    font-size: 20px;
+}
+
+#menu li{
+    list-style: none;
+}
+
+#menu li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+#menu{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+@media (max-width:1200px){
+    #menu{
+        width: 50%;
+    }
+}
+
+@media(min-width:700px){
+    #menu{
+        display: flex;
+    }
+}
+
+@media (max-width:700px){
+    #botonNav{
+        display: block;
+        position: relative;
+    }
+    #menu{
+        width: 40%;
+        height: 92vh;
+        background-color: rgba(92, 11, 117, 1);
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 8vh;
+        right: 0px;
+        align-items: center;
+    }
+
+}
